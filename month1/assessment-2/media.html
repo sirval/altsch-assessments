@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Me - Media Showcase</title>
+</head>
+<body>
+  <center>
+      <!-- Header with Navigation and Guest Avatar -->
+    <table width="100%" border="0">
+      <tr>
+        <td>
+          <nav>
+            <a href="index.html">Home</a> |
+            <a href="media.html">About</a>
+          </nav>
+        </td>
+        <td align="right">
+          <div>
+            <img src="assets/images/profile/user-50.png" alt="Guest Avatar"><br>
+            Guest
+          </div>
+        </td>
+      </tr>
+    </table>
+  <hr>
+    <h1>About Me</h1>
+    <p>Hello, I'm a passionate software developer who enjoys solving real-world problems with clean code and creativity.</p>
+
+    <h2>Responsive Picture</h2>
+    <picture>
+      <source media="(max-width: 600px)" srcset="assets/images/profile/user-sm.jpeg">
+      <source media="(max-width: 1024px)" srcset="assets/images/profile/user.jpeg">
+      <source media="(min-width: 1025px)" srcset="assets/images/profile/user-lg.jpeg">
+      <img src="assets/images/profile/user.jpeg" alt="My Photo">
+    </picture>
+
+    <h2>Audio Message</h2>
+    <audio controls>
+      <source src="intro.ogg" type="audio/ogg">
+      <source src="intro.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <h2>Video Clip</h2>
+    <video width="320" height="240" controls>
+      <source src="intro.mp4" type="video/mp4">
+      <source src="intro.webm" type="video/webm">
+      Your browser does not support the video tag.
+    </video>
+
+    <h2>Embedded YouTube (iframe)</h2>
+    <iframe width="360" height="215" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video" allowfullscreen></iframe>
+
+    <h2>Object Element (PDF)</h2>
+    <object data="cv.pdf" type="application/pdf" width="400" height="500">
+      <p>Your browser does not support PDFs. <a href="cv.pdf">Download it</a> instead.</p>
+    </object>
+
+    <h2>Image (img)</h2>
+    <img src="assets/images/profile/user-sm.jpeg" alt="Smiling portrait" width="300">
+
+    <br><br>
+
+  </center>
+</body>
+</html>
+
