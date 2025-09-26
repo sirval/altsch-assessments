@@ -1,0 +1,185 @@
+:root {
+  --bg-color: #b22222;
+  --text-color: white;
+  --display-bg: black;
+  --nav-bg: #222;
+}
+
+body.dark {
+  --bg-color: #111;
+  --text-color: #eee;
+  --display-bg: #222;
+  --nav-bg: #333;
+}
+
+body {
+  margin: 0;
+  font-family: 'Orbitron', Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--nav-bg);
+  color: var(--text-color);
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+}
+
+.nav-left {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.nav-center {
+  text-align: center;
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+.nav-right button {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+/* Stopwatch */
+.stopwatch {
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  margin: 50px auto;
+}
+
+#display {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  background: var(--display-bg);
+  padding: 15px 30px;
+  border-radius: 10px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.buttons button {
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.3s ease;
+}
+
+.buttons button:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+
+#start { background: #4caf50; color: white; }
+#stop { background: #f44336; color: white; }
+#reset { background: #ff9800; color: white; }
+#lap { background: #2196f3; color: white; }
+
+/* Lap list */
+#laps {
+  margin-top: 20px;
+  list-style: none;
+  padding: 0;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+#laps li {
+  background: rgba(0,0,0,0.2);
+  margin: 5px;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+/* Modal base */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 9999; 
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal content */
+.modal-content {
+  background: var(--display-bg);
+  color: var(--text-color);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 90%;
+  max-width: 350px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.modal-buttons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.modal-buttons button,
+#closeHelp {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#confirmReload { background: #f44336; color: white; }
+#cancelReload, #closeHelp { background: #4caf50; color: white; }
+
+
+/* ✅ Mobile View */
+@media (max-width: 768px) {
+  /* Navbar stacks */
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+  .nav-left, .nav-center, .nav-right {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  /* Stopwatch display scales */
+  #display {
+    font-size: 2.2rem;
+    padding: 12px 20px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Even smaller devices */
+  #display {
+    font-size: 1.8rem;
+    padding: 10px 15px;
+  }
+  .nav-left {
+    font-size: 1rem;
+  }
+  .nav-center {
+    font-size: 0.75rem;
+  }
+}

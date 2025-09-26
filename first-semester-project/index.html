@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stopwatch App</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+          <i class="fa-solid fa-stopwatch"></i> Stopwatch App
+        </div>
+        <div class="nav-center">Ohuka Ikenna Valentine - ID: ALT/SOE/025/3163</div>
+        <div class="nav-right">
+          <button id="theme-toggle"><i class="fa-solid fa-moon"></i></button>
+        </div>
+    </nav>
+
+    <!-- Reload Confirmation Modal -->
+    <div id="reloadModal" class="modal">
+      <div class="modal-content">
+        <p><i class="fa-solid fa-triangle-exclamation"></i> The stopwatch is currently running. Are you sure you want to refresh?</p>
+        <div class="modal-buttons">
+          <button id="confirmReload"><i class="fa-solid fa-rotate-right"></i> Refresh Anyway</button>
+          <button id="cancelReload"><i class="fa-solid fa-xmark"></i> Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Shortcuts Help Modal -->
+    <div id="helpModal" class="modal">
+      <div class="modal-content">
+        <h3><i class="fa-solid fa-keyboard"></i> Keyboard Shortcuts</h3>
+        <ul>
+          <li><b>Spacebar</b> → <i class="fa-solid fa-play"></i>/<i class="fa-solid fa-pause"></i> Start/Stop</li>
+          <li><b>R</b> → <i class="fa-solid fa-rotate-left"></i> Reset</li>
+          <li><b>L</b> → <i class="fa-solid fa-flag"></i> Record Lap</li>
+          <li><b>H</b> → <i class="fa-solid fa-circle-question"></i> Show Help</li>
+        </ul>
+        <button id="closeHelp"><i class="fa-solid fa-xmark"></i> Close</button>
+      </div>
+    </div>
+
+    <div class="stopwatch">
+        <div id="display">00:00:00.000</div>
+        
+        <div class="buttons">
+          <button id="start"><i class="fa-solid fa-play"></i> Start</button>
+          <button id="stop"><i class="fa-solid fa-pause"></i> Stop</button>
+          <button id="reset"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+          <button id="lap"><i class="fa-solid fa-flag"></i> Lap</button>
+        </div>
+
+        <ul id="laps"></ul> <!-- Lap list -->
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
