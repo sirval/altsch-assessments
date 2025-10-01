@@ -62,28 +62,42 @@ stopBtn.addEventListener("click", () => {
 
 // Reset button
 resetBtn.addEventListener("click", () => {
-  clearInterval(interval);
-  hours = minutes = seconds = milliseconds = 0;
-  running = false;
-  lapsContainer.innerHTML = "";
-  updateDisplay();
-  localStorage.removeItem("laps");
+  if (! running) {
+    clearInterval(interval);
+    hours = minutes = seconds = milliseconds = 0;
+    running = false;
+    lapsContainer.innerHTML = "";
+    updateDisplay();
+    localStorage.removeItem("laps");
+  }
 });
 
 // Lap button
 lapBtn.addEventListener("click", () => {
   if (running) {
     const lapTime = display.innerText;
-    const li = document.createElement("li");
-    li.textContent = lapTime;
-    lapsContainer.appendChild(li);
-
-    // Save to localStorage
     let laps = JSON.parse(localStorage.getItem("laps")) || [];
+
+    // Let's keep laps in order (oldest-newest)
     laps.push(lapTime);
+    // Save back to storage 
     localStorage.setItem("laps", JSON.stringify(laps));
+
+    // Clear and rebuild list (descending display)
+    lapsContainer.innerHTML = "";
+    laps
+      .slice() // I guess I need to clone so we the original won't be messed with
+      .reverse() // newest first
+      .forEach((time, index) => {
+        const lapNumber = laps.length - index;
+        const li = document.createElement("li");
+        li.textContent = `${String(lapNumber).padStart(2, "0")} - ${time}`;
+        lapsContainer.appendChild(li);
+      });
   }
 });
+
+
 
 // Load user theme preference from local storage on page load
 window.addEventListener("load", () => {

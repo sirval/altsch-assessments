@@ -48,14 +48,36 @@
         <div id="display">00:00:00.000</div>
         
         <div class="buttons">
-          <button id="start"><i class="fa-solid fa-play"></i> Start</button>
-          <button id="stop"><i class="fa-solid fa-pause"></i> Stop</button>
-          <button id="reset"><i class="fa-solid fa-rotate-left"></i> Reset</button>
-          <button id="lap"><i class="fa-solid fa-flag"></i> Lap</button>
+          <button id="start" title="Start"><i class="fa-solid fa-play"></i> </button>
+          <button id="stop" title="Stop"><i class="fa-solid fa-pause"></i> </button>
+          <button id="reset" title="Reset"><i class="fa-solid fa-rotate-left"></i> </button>
+          <button id="lap" title="Lap"><i class="fa-solid fa-flag"></i> </button>
         </div>
 
         <ul id="laps"></ul> <!-- Lap list -->
     </div>
+
+    <footer class="footer-note">
+      <h4>📝 Features Implemented</h4>
+      <ul>
+        <li>⏱ Fully functional stopwatch (Start, Stop, Reset, Lap)</li>
+        <li>📋 Lap recording with numbering (descending order)</li>
+        <li>💾 Laps saved in Local Storage (restored on reload)</li>
+        <li>🌙 Light/Dark theme toggle with persistence</li>
+        <li>⌨️ Keyboard shortcuts:
+          <ul>
+            <li>Space → Start/Stop</li>
+            <li>R → Reset</li>
+            <li>L → Record Lap</li>
+            <li>H → Show Help Modal</li>
+          </ul>
+        </li>
+        <li>⚠️ Reload confirmation when stopwatch is running</li>
+        <li>📖 Help modal shown automatically on first visit</li>
+        <li>📱 Responsive mobile-friendly UI with Font Awesome icons</li>
+      </ul>
+    </footer>
+
 
     <script src="assets/js/script.js"></script>
 </body>

@@ -1,7 +1,7 @@
 :root {
-  --bg-color: #b22222;
+  --bg-color: #fcf8f8;
   --text-color: white;
-  --display-bg: black;
+  --display-bg: rgb(143, 140, 140);
   --nav-bg: #222;
 }
 
@@ -52,10 +52,17 @@ body {
 
 /* Stopwatch */
 .stopwatch {
-  text-align: center;
+  background: var(--bg-color);
+  color: var(--text-color);
   width: 90%;
-  max-width: 400px;
-  margin: 50px auto;
+  max-width: 380px;
+  margin: 40px auto;
+  padding: 25px 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #display {
@@ -64,6 +71,18 @@ body {
   background: var(--display-bg);
   padding: 15px 30px;
   border-radius: 10px;
+}
+
+/* Time Display */
+#display {
+  font-size: 2.8rem;
+  margin-bottom: 25px;
+  background: var(--display-bg);
+  padding: 15px 30px;
+  border-radius: 12px;
+  text-align: center;
+  font-family: 'Orbitron', monospace;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
 }
 
 .buttons {
@@ -97,12 +116,13 @@ body {
   margin-top: 20px;
   list-style: none;
   padding: 0;
-  max-height: 150px;
+  max-height: 200px;
+  width: 90%;
   overflow-y: auto;
 }
 
 #laps li {
-  background: rgba(0,0,0,0.2);
+  background: var(--display-bg);
   margin: 5px;
   padding: 8px;
   border-radius: 5px;
@@ -148,6 +168,32 @@ body {
 
 #confirmReload { background: #f44336; color: white; }
 #cancelReload, #closeHelp { background: #4caf50; color: white; }
+
+.footer-note {
+  margin: 40px auto;
+  padding: 15px 20px;
+  max-width: 600px;
+  font-size: 0.9rem;
+  background: var(--nav-bg);
+  color: var(--text-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.footer-note h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.footer-note ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.footer-note li {
+  margin: 5px 0;
+}
 
 
 /* ✅ Mobile View */
